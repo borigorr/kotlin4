@@ -8,7 +8,7 @@ class MainKtTest {
     fun calcCommissionDefaultParams() {
         val amount = 100.0
         val result = calcCommission(amount)
-        assertEquals(0.0, result)
+        assertEquals(0.0, result, 0.0)
     }
 
     @Test(expected = LimitException::class)
@@ -49,7 +49,7 @@ class MainKtTest {
         val amountCurrentMonth = 75_001.0
         val cardType = "MasterCard"
         val result = calcCommission(amount, amountCurrentMonth, cardType)
-        assertEquals(20.6, result)
+        assertEquals(20.6, result, 0.0)
     }
 
     @Test
@@ -58,7 +58,7 @@ class MainKtTest {
         val amountCurrentMonth = 75_001.0
         val cardType = "Maestro"
         val result = calcCommission(amount, amountCurrentMonth, cardType)
-        assertEquals(20.6, result)
+        assertEquals(20.6, result, 0.0)
     }
 
     @Test
@@ -67,6 +67,6 @@ class MainKtTest {
         val amountCurrentMonth = 50.0
         val cardType = "Visa"
         val result = calcCommission(amount, amountCurrentMonth, cardType)
-        assertEquals(35.0, result)
+        assertEquals(35.0, result, 0.0)
     }
 }
